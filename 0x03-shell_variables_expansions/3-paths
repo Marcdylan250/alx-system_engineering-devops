@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $PATH | awk -F':' '{print $1}' | wc -l
+IFS=: read -ra PATH_DIRS <<< "$PATH"; echo "${#PATH_DIRS[@]}"
